@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>EcoPlus: Shop Local, Grow Together</title>
+    <!-- SEO Best Practices -->
+    <meta name="description" content="EcoPlus is a dual-impact mobile platform designed to revitalize the local economy while promoting sustainable consumer habits.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons (Lightweight Icon Set) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- Header -->
+        <header class="app-header glass-effect">
+            <div class="logo">
+                <i class="ph-fill ph-leaf"></i>
+                <h1>EcoPlus</h1>
+            </div>
+            <div class="user-profile">
+                <div class="points-badge">
+                    <i class="ph-fill ph-star"></i>
+                    <span id="header-points">2,450</span>
+                </div>
+                <img src="https://i.pravatar.cc/150?u=ecoplus" alt="User Avatar" class="avatar">
+            </div>
+        </header>
+        <!-- Main Content Area -->
+        <main class="app-main">
+            
+            <!-- VIEW: Home (Impact Tracker) -->
+            <section id="view-home" class="view active-view">
+                <div class="view-header">
+                    <h2>Impact Tracker</h2>
+                    <p>Your EcoPlus Contribution</p>
+                </div>
+                <div class="card glass-effect highlight-card">
+                    <div class="card-content">
+                        <h3>Total EcoPoints</h3>
+                        <div class="big-number" id="dashboard-points">2,450</div>
+                        <p class="subtitle">Loyalty Tier: <span class="tier-badge gold">Gold</span></p>
+                    </div>
+                    <div class="card-icon"><i class="ph-duotone ph-sparkle"></i></div>
+                </div>
+                <div class="metrics-grid">
+                    <div class="card glass-effect metric-card">
+                        <i class="ph-duotone ph-currency-circle-dollar"></i>
+                        <h4>Local Wealth Kept</h4>
+                        <div class="metric-value">$840.50</div>
+                        <div class="trend positive"><i class="ph-bold ph-trend-up"></i> +12% this month</div>
+                    </div>
+                    <div class="card glass-effect metric-card">
+                        <i class="ph-duotone ph-car-profile"></i>
+                        <h4>Emissions Saved</h4>
+                        <div class="metric-value">45 kg CO₂</div>
+                        <div class="trend positive"><i class="ph-bold ph-trend-up"></i> +5% this month</div>
+                    </div>
+                </div>
+                <h3 class="section-title">Recent Transactions</h3>
+                <ul class="transaction-list">
+                    <li class="transaction-item glass-effect">
+                        <div class="tx-icon green"><i class="ph-duotone ph-coffee"></i></div>
+                        <div class="tx-details">
+                            <h4>Bean & Leaf Cafe</h4>
+                            <p>Local coffee purchase</p>
+                        </div>
+                        <div class="tx-points positive">+25 pts</div>
+                    </li>
+                    <li class="transaction-item glass-effect">
+                        <div class="tx-icon blue"><i class="ph-duotone ph-basket"></i></div>
+                        <div class="tx-details">
+                            <h4>Fresh Farm Market</h4>
+                            <p>Organic produce</p>
+                        </div>
+                        <div class="tx-points positive">+120 pts</div>
+                    </li>
+                    <li class="transaction-item glass-effect">
+                        <div class="tx-icon orange"><i class="ph-duotone ph-scissors"></i></div>
+                        <div class="tx-details">
+                            <h4>Downtown Barbers</h4>
+                            <p>Reward Redemption</p>
+                        </div>
+                        <div class="tx-points negative">-500 pts</div>
+                    </li>
+                </ul>
+            </section>
+            <!-- VIEW: Scanner (Eco-Scanner) -->
+            <section id="view-scanner" class="view">
+                <div class="view-header">
+                    <h2>Eco-Scanner</h2>
+                    <p>Scan verified local products</p>
+                </div>
+                
+                <div class="scanner-container">
+                    <div class="scanner-frame">
+                        <div class="scanner-laser"></div>
+                        <div class="corner top-left"></div>
+                        <div class="corner top-right"></div>
+                        <div class="corner bottom-left"></div>
+                        <div class="corner bottom-right"></div>
+                        <div class="scanner-hint">Align QR code within frame</div>
+                    </div>
+                    
+                    <button id="btn-simulate-scan" class="primary-btn pulse-anim">
+                        <i class="ph-bold ph-qr-code"></i> Simulate Scan
+                    </button>
+                </div>
+                
+                <div id="scan-result" class="scan-result glass-effect hidden">
+                    <div class="success-icon"><i class="ph-fill ph-check-circle"></i></div>
+                    <h3>Purchase Verified!</h3>
+                    <p>Green Acres Local Honey</p>
+                    <div class="points-awarded">+45 EcoPoints</div>
+                </div>
+            </section>
+            <!-- VIEW: Map (Green Map) -->
+            <section id="view-map" class="view">
+                <div class="view-header floating">
+                    <div class="search-bar glass-effect">
+                        <i class="ph-bold ph-magnifying-glass"></i>
+                        <input type="text" placeholder="Find local gems...">
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <!-- Placeholder for Map -->
+                    <div class="map-background">
+                        <div class="map-pin active bounce" style="top: 40%; left: 50%;">
+                            <i class="ph-fill ph-map-pin"></i>
+                            <div class="pin-popup glass-effect">
+                                <strong>Sunny Bakery</strong>
+                                <span>Double Point Zone</span>
+                            </div>
+                        </div>
+                        <div class="map-pin" style="top: 20%; left: 30%;">
+                            <i class="ph-fill ph-map-pin"></i>
+                        </div>
+                        <div class="map-pin" style="top: 60%; left: 70%;">
+                            <i class="ph-fill ph-map-pin"></i>
+                        </div>
+                        <div class="double-point-zone" style="top: 30%; left: 40%;"></div>
+                    </div>
+                </div>
+                
+                <div class="bottom-sheet glass-effect">
+                    <div class="sheet-handle"></div>
+                    <h3>Double Point Zones</h3>
+                    <p>Visit these areas to boost local foot traffic and earn 2x points!</p>
+                    <div class="zone-card">
+                        <div class="zone-icon"><i class="ph-duotone ph-buildings"></i></div>
+                        <div class="zone-info">
+                            <h4>Historic Downtown</h4>
+                            <p>Ends in 2 days</p>
+                        </div>
+                        <div class="zone-multiplier">2x</div>
+                    </div>
+                </div>
+            </section>
+            <!-- VIEW: Marketplace (Plus-Marketplace) -->
+            <section id="view-marketplace" class="view">
+                <div class="view-header">
+                    <h2>Plus-Marketplace</h2>
+                    <p>Redeem your impact</p>
+                </div>
+                <div class="tabs marketplace-tabs">
+                    <button class="tab active" data-target="perks">Local Perks</button>
+                    <button class="tab" data-target="grants">Grants</button>
+                    <button class="tab" data-target="rewards">Eco-Rewards</button>
+                </div>
+                <div class="tab-content active" id="tab-perks">
+                    <div class="reward-grid">
+                        <div class="card glass-effect reward-card">
+                            <div class="reward-img" style="background-image: url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=300&q=80')"></div>
+                            <div class="reward-info">
+                                <h4>Free Artisanal Coffee</h4>
+                                <p>Bean & Leaf Cafe</p>
+                                <button class="redeem-btn"><i class="ph-bold ph-star"></i> 300 pts</button>
+                            </div>
+                        </div>
+                        <div class="card glass-effect reward-card">
+                            <div class="reward-img" style="background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=300&q=80')"></div>
+                            <div class="reward-info">
+                                <h4>20% Off Organic Veggies</h4>
+                                <p>Fresh Farm Market</p>
+                                <button class="redeem-btn"><i class="ph-bold ph-star"></i> 500 pts</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="tab-grants">
+                    <div class="grant-card glass-effect">
+                        <div class="grant-img" style="background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=500&q=80')"></div>
+                        <div class="grant-details">
+                            <h3>Riverside Park Renovation</h3>
+                            <p>Pool points with neighbors to build a new sustainable playground.</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 65%;"></div>
+                            </div>
+                            <div class="grant-stats">
+                                <span>65,000 / 100,000 pts</span>
+                                <span>65% Funded</span>
+                            </div>
+                            <button class="primary-btn block">Donate Points</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="tab-rewards">
+                    <div class="reward-grid">
+                        <div class="card glass-effect reward-card">
+                            <div class="reward-img" style="background-image: url('https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?auto=format&fit=crop&w=300&q=80')"></div>
+                            <div class="reward-info">
+                                <h4>Bamboo Toothbrush Set</h4>
+                                <p>Zero Waste Shop</p>
+                                <button class="redeem-btn"><i class="ph-bold ph-star"></i> 800 pts</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav glass-effect">
+            <button class="nav-item active" data-view="home">
+                <i class="ph-bold ph-house"></i>
+                <span>Home</span>
+            </button>
+            <button class="nav-item" data-view="scanner">
+                <div class="scan-nav-btn">
+                    <i class="ph-bold ph-qr-code"></i>
+                </div>
+                <span>Scan</span>
+            </button>
+            <button class="nav-item" data-view="map">
+                <i class="ph-bold ph-map-trifold"></i>
+                <span>Map</span>
+            </button>
+            <button class="nav-item" data-view="marketplace">
+                <i class="ph-bold ph-storefront"></i>
+                <span>Rewards</span>
+            </button>
+        </nav>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
